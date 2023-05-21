@@ -1,4 +1,7 @@
-const targetItemsRef = document.querySelectorAll(".item");
-console.log("Number of categories:", targetItemsRef.length);
-const targetUlRef = targetItemRef.parentNode;
-console.log(targetUlRef);
+const categoriesItemsRef = document.querySelectorAll(".item");
+console.log("Number of categories:", categoriesItemsRef.length);
+
+categoriesItemsRef.forEach((element) => {
+  console.log("Category:", element.firstElementChild.textContent);
+  console.log("Elements:", element.querySelectorAll("li").length);
+});
