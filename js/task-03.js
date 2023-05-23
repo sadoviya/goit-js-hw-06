@@ -16,15 +16,13 @@ const images = [
 const galleryListRef = document.querySelector(".gallery");
 
 const imagesList = images
-  .map((image) => `<li><img src="${image.url}" alt="${image.alt}"></li>`)
+  .map(
+    (image) =>
+      `<li style="list-style: none"><img style="width: 320px" src="${image.url}" alt="${image.alt}"></li>`
+  )
   .join("");
 
 galleryListRef.insertAdjacentHTML("beforeend", imagesList);
-
-galleryListRef.querySelectorAll("li").forEach((li) => {
-  li.style.listStyle = "none";
-  li.querySelector("img").style.width = "320px";
-});
 
 galleryListRef.style.display = "flex";
 galleryListRef.style.flexDirection = "column";
